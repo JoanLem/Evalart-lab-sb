@@ -1,0 +1,13 @@
+services:
+  wrapper-xml-json:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: wrapper-xml-json:latest
+    container_name: wrapper-xml-json
+    ports:
+      - "8081:8081"
+    environment:
+      SERVER_PORT: 8081
+      ENDPOINT_URL: https://acme-test.free.beeceptor.com/sent-order
+    restart: unless-stopped
